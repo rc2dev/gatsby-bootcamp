@@ -8,14 +8,22 @@ const IndexPage = () => {
   const [fetchedData, setFetchedData] = useState([])
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
+  const fetchData = () => {
+    console.log("Updating...")
+
     fetch("https://random-data-api.com/api/dessert/random_dessert?size=15")
-      .then(response => response.json())
-      .then(json => {
-        console.log(json)
-        setFetchedData(json);
-        setLoading(false);
-      })
+    .then(response => response.json())
+    .then(json => {
+      console.log(json)
+      setFetchedData(json);
+      setLoading(false);
+    })
+
+    setTimeout(fetchData, 3000);
+  }
+
+  useEffect(() => {
+    fetchData()
   }, [])
 
   return (
@@ -30,12 +38,15 @@ const IndexPage = () => {
       {/*  Calling an API */}
       <hr />
       <p>This are some posts I just fetched from an API:</p>
-      {loading ? <p>Loading API data...</p> : (
-      <ul>
-        {fetchedData.map(item => {
-          return <li key={item.id}>{item.variety}</li>
-        })}
-      </ul> )}
+      {loading ? (
+        <p>Loading API data...</p>
+      ) : (
+        <ul>
+          {fetchedData.map(item => {
+            return <li key={item.id}>{item.variety}</li>
+          })}
+        </ul>
+      )}
     </Layout>
   )
 }
