@@ -9,7 +9,7 @@ const ContactPage = () => (
     <p>
       Send me a message{" "}
       <a
-        href="https://twitter.com/tiriricanaweb"
+        href="https://twitter.com/"
         target="_blank"
         rel="noreferrer"
       >

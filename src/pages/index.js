@@ -19,7 +19,7 @@ const IndexPage = () => {
       setLoading(false);
     })
 
-    setTimeout(fetchData, 3000);
+    setTimeout(fetchData, 5000);
   }
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const IndexPage = () => {
 
       {/*  Calling an API */}
       <hr />
-      <p>This are some posts I just fetched from an API:</p>
+      <p>This is some data I'm fetching from an API every couple of seconds:</p>
       {loading ? (
         <p>Loading API data...</p>
       ) : (
