@@ -44,6 +44,15 @@ const Header = () => {
             <Link
               className={headerStyles.navItem}
               activeClassName={headerStyles.activeNavItem}
+              to="/dynamic"
+            >
+              Dynamic
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
               to="/about"
             >
               About
